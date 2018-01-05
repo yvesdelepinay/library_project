@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Author</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ author.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ author.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ author.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Nationality</th>
+                <td>{{ author.nationality }}</td>
+            </tr>
+            <tr>
+                <th>Birthplace</th>
+                <td>{{ author.birthplace }}</td>
+            </tr>
+            <tr>
+                <th>Birthdate</th>
+                <td>{% if author.birthdate %}{{ author.birthdate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Deathplace</th>
+                <td>{{ author.deathplace }}</td>
+            </tr>
+            <tr>
+                <th>Deathdate</th>
+                <td>{% if author.deathdate %}{{ author.deathdate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Biography</th>
+                <td>{{ author.biography }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('authors_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('authors_edit', { 'id': author.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
