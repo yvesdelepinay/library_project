@@ -29,7 +29,8 @@ class Critics
     private $critic;
 
     /**
-     * @ORM\OneToMany(targetEntity="Books", mappedBy="critics")
+     * @ORM\ManyToOne(targetEntity="Books", inversedBy="critics")
+     * @ORM\JoinColumn(name="books_id", referencedColumnName="id")
      */
     private $books;
 

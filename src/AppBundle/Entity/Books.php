@@ -42,15 +42,14 @@ class Books
     private $categories;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Critics", inversedBy="books")
-     * @ORM\JoinColumn(name="critics_id", referencedColumnName="id")
+     * @ORM\OneToMany(targetEntity="Critics", mappedBy="books")
      */
     private $critics;
 
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Authors", cascade={"persist"})
      */
-      private $authors;
+    private $authors;
 
 
     /**
