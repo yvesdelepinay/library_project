@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Authors
+ * Author
  *
- * @ORM\Table(name="authors")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\AuthorsRepository")
+ * @ORM\Table(name="author")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\AuthorRepository")
  */
-class Authors
+class Author
 {
     /**
      * @var int
@@ -38,14 +38,14 @@ class Authors
     /**
      * @var string
      *
-     * @ORM\Column(name="nationality", type="string", length=55)
+     * @ORM\Column(name="nationality", type="string", length=255)
      */
     private $nationality;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="birthplace", type="string", length=55)
+     * @ORM\Column(name="birthplace", type="string", length=255)
      */
     private $birthplace;
 
@@ -59,7 +59,7 @@ class Authors
     /**
      * @var string
      *
-     * @ORM\Column(name="deathplace", type="string", length=55)
+     * @ORM\Column(name="deathplace", type="string", length=255)
      */
     private $deathplace;
 
@@ -93,7 +93,7 @@ class Authors
      *
      * @param string $firstname
      *
-     * @return Authors
+     * @return Author
      */
     public function setFirstname($firstname)
     {
@@ -117,7 +117,7 @@ class Authors
      *
      * @param string $lastname
      *
-     * @return Authors
+     * @return Author
      */
     public function setLastname($lastname)
     {
@@ -141,7 +141,7 @@ class Authors
      *
      * @param string $nationality
      *
-     * @return Authors
+     * @return Author
      */
     public function setNationality($nationality)
     {
@@ -165,7 +165,7 @@ class Authors
      *
      * @param string $birthplace
      *
-     * @return Authors
+     * @return Author
      */
     public function setBirthplace($birthplace)
     {
@@ -189,7 +189,7 @@ class Authors
      *
      * @param \DateTime $birthdate
      *
-     * @return Authors
+     * @return Author
      */
     public function setBirthdate($birthdate)
     {
@@ -213,7 +213,7 @@ class Authors
      *
      * @param string $deathplace
      *
-     * @return Authors
+     * @return Author
      */
     public function setDeathplace($deathplace)
     {
@@ -237,7 +237,7 @@ class Authors
      *
      * @param \DateTime $deathdate
      *
-     * @return Authors
+     * @return Author
      */
     public function setDeathdate($deathdate)
     {
@@ -261,7 +261,7 @@ class Authors
      *
      * @param string $biography
      *
-     * @return Authors
+     * @return Author
      */
     public function setBiography($biography)
     {
