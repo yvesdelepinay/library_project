@@ -42,7 +42,7 @@ class Book
     private $category;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Critics", inversedBy="book")
+     * @ORM\ManyToOne(targetEntity="Critic", inversedBy="book")
      * @ORM\JoinColumn(name="critic_id", referencedColumnName="id")
      */
     private $critic;

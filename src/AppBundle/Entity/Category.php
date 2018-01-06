@@ -31,7 +31,7 @@ class Category
     /**
      * @ORM\OneToMany(targetEntity="Book", mappedBy="category")
      */
-    private $books;
+    private $book;
 
     /**
      * Get id
