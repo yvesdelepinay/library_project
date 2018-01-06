@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Books
+ * Book
  *
- * @ORM\Table(name="books")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\BooksRepository")
+ * @ORM\Table(name="book")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BookRepository")
  */
-class Books
+class Book
 {
     /**
      * @var int
@@ -36,21 +36,21 @@ class Books
     private $abstract;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Categories", inversedBy="books")
-     * @ORM\JoinColumn(name="categories_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="book")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
-    private $categories;
+    private $category;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Critics", inversedBy="books")
-     * @ORM\JoinColumn(name="critics_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Critics", inversedBy="book")
+     * @ORM\JoinColumn(name="critic_id", referencedColumnName="id")
      */
-    private $critics;
+    private $critic;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Authors", cascade={"persist"})
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Author", cascade={"persist"})
      */
-      private $authors;
+      private $author;
 
 
     /**
@@ -68,7 +68,7 @@ class Books
      *
      * @param string $name
      *
-     * @return Books
+     * @return Book
      */
     public function setName($name)
     {
@@ -92,7 +92,7 @@ class Books
      *
      * @param string $abstract
      *
-     * @return Books
+     * @return Book
      */
     public function setAbstract($abstract)
     {

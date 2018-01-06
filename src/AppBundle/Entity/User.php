@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Users
+ * User
  *
- * @ORM\Table(name="users")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UsersRepository")
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class Users
+class User
 {
     /**
      * @var int
@@ -49,20 +49,6 @@ class Users
      */
     private $password;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="role", type="string", length=24)
-     */
-    private $role;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="isActive", type="boolean")
-     */
-    private $isActive;
-
 
     /**
      * Get id
@@ -79,7 +65,7 @@ class Users
      *
      * @param string $firstname
      *
-     * @return Users
+     * @return User
      */
     public function setFirstname($firstname)
     {
@@ -103,7 +89,7 @@ class Users
      *
      * @param string $lastname
      *
-     * @return Users
+     * @return User
      */
     public function setLastname($lastname)
     {
@@ -127,7 +113,7 @@ class Users
      *
      * @param string $username
      *
-     * @return Users
+     * @return User
      */
     public function setUsername($username)
     {
@@ -151,7 +137,7 @@ class Users
      *
      * @param string $password
      *
-     * @return Users
+     * @return User
      */
     public function setPassword($password)
     {
@@ -168,54 +154,6 @@ class Users
     public function getPassword()
     {
         return $this->password;
-    }
-
-    /**
-     * Set role
-     *
-     * @param string $role
-     *
-     * @return Users
-     */
-    public function setRole($role)
-    {
-        $this->role = $role;
-
-        return $this;
-    }
-
-    /**
-     * Get role
-     *
-     * @return string
-     */
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    /**
-     * Set isActive
-     *
-     * @param boolean $isActive
-     *
-     * @return Users
-     */
-    public function setIsActive($isActive)
-    {
-        $this->isActive = $isActive;
-
-        return $this;
-    }
-
-    /**
-     * Get isActive
-     *
-     * @return bool
-     */
-    public function getIsActive()
-    {
-        return $this->isActive;
     }
 }
 

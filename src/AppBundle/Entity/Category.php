@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Categories
+ * Category
  *
- * @ORM\Table(name="categories")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CategoriesRepository")
+ * @ORM\Table(name="category")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CategoryRepository")
  */
-class Categories
+class Category
 {
     /**
      * @var int
@@ -29,14 +29,9 @@ class Categories
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="Books", mappedBy="categories")
+     * @ORM\OneToMany(targetEntity="Book", mappedBy="category")
      */
     private $books;
-
-    public function __construct()
-    {
-        $this->books = new ArrayCollection();
-    }
 
     /**
      * Get id
@@ -53,7 +48,7 @@ class Categories
      *
      * @param string $name
      *
-     * @return Categories
+     * @return Category
      */
     public function setName($name)
     {

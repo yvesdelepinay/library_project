@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Critics
+ * Critic
  *
- * @ORM\Table(name="critics")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CriticsRepository")
+ * @ORM\Table(name="critic")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CriticRepository")
  */
-class Critics
+class Critic
 {
     /**
      * @var int
@@ -29,15 +29,9 @@ class Critics
     private $critic;
 
     /**
-     * @ORM\OneToMany(targetEntity="Books", mappedBy="critics")
+     * @ORM\OneToMany(targetEntity="Book", mappedBy="critic")
      */
-    private $books;
-
-    public function __construct()
-    {
-        $this->books = new ArrayCollection();
-    }
-
+    private $book;
 
     /**
      * Get id
@@ -54,7 +48,7 @@ class Critics
      *
      * @param string $critic
      *
-     * @return Critics
+     * @return Critic
      */
     public function setCritic($critic)
     {
