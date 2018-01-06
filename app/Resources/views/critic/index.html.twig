@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Critics list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Critic</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for critic in critics %}
+            <tr>
+                <td><a href="{{ path('critic_show', { 'id': critic.id }) }}">{{ critic.id }}</a></td>
+                <td>{{ critic.critic }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('critic_show', { 'id': critic.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('critic_edit', { 'id': critic.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('critic_new') }}">Create a new critic</a>
+        </li>
+    </ul>
+{% endblock %}
